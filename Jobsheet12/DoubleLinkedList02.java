@@ -80,6 +80,9 @@ public class DoubleLinkedList02 {
             System.out.println("Linked List kosong.");
             return;
         }
+        System.out.println("Data berhasil dihapus.");
+        tail.data.tampil();
+
         if (head == tail) {
             head = tail = null;
         } else {
@@ -103,16 +106,16 @@ public class DoubleLinkedList02 {
     }
 
     public void printReverse() {
-    if (isEmpty()) {
-        System.out.println("Linked List masih kosong.");
-        return;
+        if (isEmpty()) {
+            System.out.println("Linked List masih kosong.");
+            return;
+        }
+        System.out.println("=== Data (Terbalik / Reverse) ===");
+        Node02 current = tail;
+        while (current != null) {
+            current.data.tampil();
+            System.out.println();
+            current = current.prev;
+        }
     }
-    System.out.println("=== Data (Terbalik / Reverse) ===");
-    Node02 current = tail;
-    while (current != null) {
-        current.data.tampil();
-        System.out.println();
-        current = current.prev; 
-    }
-}
 }
